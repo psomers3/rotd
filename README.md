@@ -12,3 +12,4 @@ setup:
 - [fake rtsp stream](https://github.com/insight-platform/Fake-RTSP-Stream?tab=readme-ov-file)
 - [localstack for mocking aws services](https://docs.localstack.cloud/overview/)
 
+![diagram](./docs/diagram.png)
