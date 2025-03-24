@@ -1,0 +1,15 @@
+services:
+  receive-video:
+    container_name: receive_video
+    privileged: true
+    volumes:
+      - ./output:/output_dir/
+    network_mode: "host"
+    environment:
+      STREAMING_SOURCE: ${STREAMING_SOURCE}
+      AWS_ACCESS_KEY_ID: test
+      AWS_SECRET_ACCESS_KEY: test
+    build:
+      context: ./
+      dockerfile: ./dockerfile
+      network: host
