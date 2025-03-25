@@ -216,3 +216,4 @@ volume/
 **/output/
 
 *.pt
+.vscode/
