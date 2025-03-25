@@ -2,6 +2,10 @@ format:
 	ruff check . --fix
 	ruff format
 
+format-check:
+	uv run ruff check .
+	uv run ruff format --check
+
 requirements:
 	uv export --no-hashes --no-dev --format requirements-txt > requirements.txt
 
