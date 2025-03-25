@@ -1,0 +1,10 @@
+FROM public.ecr.aws/docker/library/python:3.11-slim-bullseye
+    
+RUN python -m pip install uv
+
+COPY ./ /app/
+WORKDIR /app
+RUN uv sync
+RUN uv run pip uninstall opencv-python opencv-contrib
+
+CMD [ "uv", "run", "python", "model_inference/__main__.py" ]

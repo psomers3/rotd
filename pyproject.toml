@@ -18,6 +18,7 @@ torch-vision = [
     ]
 
 receive-video-stream = { workspace = true }
+model-inference = { workspace = true }
 
 [[tool.uv.index]]
 name = "torch-cu124"
@@ -38,5 +39,6 @@ constraint-dependencies = [
 
 [tool.uv.workspace]
 members = [
-    "receive_video"
+    "receive_video",
+    "model_inference"
 ]

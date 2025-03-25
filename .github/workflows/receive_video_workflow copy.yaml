@@ -1,0 +1,38 @@
+name: Receive Video Workflow
+
+on:
+  workflow_call:
+    inputs: {}
+    outputs: {}
+    secrets: {}
+
+jobs:
+  receive-video-workflow:
+    runs-on: ubuntu-latest
+    env:
+        working-directory: ${{github.workspace }}/receive_video
+    defaults:
+      run:
+        shell: bash
+        working-directory: ${{ env.working-directory }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        lfs: false
+        fetch-depth: 0
+    - name: Get PR metadata
+      uses: ./.github/actions/action_meta
+    - name: install uv
+      run: |
+        pip install uv
+        uv sync
+    - name: linting and formatting check
+      run: |
+        make format-check
+    - name: testing
+      run: |
+        make test
+    - name: build docker
+      run: |
+        make build_docker

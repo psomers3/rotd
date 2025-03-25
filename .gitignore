@@ -214,3 +214,5 @@ terraform.rc
 
 volume/
 **/output/
+
+*.pt

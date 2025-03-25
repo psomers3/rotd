@@ -1,13 +1,11 @@
 services:
-  receive-video:
-    container_name: receive_video
+  model-inference:
+    container_name: model-inference
     privileged: true
     network_mode: "host"
     environment:
-      STREAMING_SOURCE: ${STREAMING_SOURCE}
       AWS_ACCESS_KEY_ID: test
       AWS_SECRET_ACCESS_KEY: test
-      AWS_REGION: us-east-1
     build:
       context: ./
       dockerfile: ./dockerfile
