@@ -1,7 +1,7 @@
 [project]
 name = "real-time-object-processing"
 version = "0.1.0"
-description = "Add your description here"
+description = ""
 readme = "README.md"
 authors = [
     {name = "Peter Somers", email = "peter.w.somers@icloud.com"}
